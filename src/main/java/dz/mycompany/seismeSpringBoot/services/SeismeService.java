@@ -76,7 +76,7 @@ public class SeismeService {
         SeismeGetDTO seismeGetDTO = null;
         Optional<Seisme> seismeFound = repository.findById(id);
         if (seismeFound.isPresent()) {
-            seismeGetDTO = mapper.map(seismeFound, SeismeGetDTO.class);
+            seismeGetDTO = mapper.map(seismeFound.get(), SeismeGetDTO.class);
         }
         return seismeGetDTO;
     }

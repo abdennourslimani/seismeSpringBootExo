@@ -79,7 +79,7 @@ public class LocalisationService {
 
         Optional<Localisation> localisationFound = repository.findById(id);
         if (localisationFound.isPresent()) {
-            localisationGetDTO = mapper.map(localisationFound, LocalisationRelationGetDTO.class);
+            localisationGetDTO = mapper.map(localisationFound.get(), LocalisationRelationGetDTO.class);
         }
         return localisationGetDTO ;
     }
